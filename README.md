@@ -1,2 +1,4 @@
 # disk-format-simulator
-使用AI写出的代码，大抵作用是：可配置的接口与实现的动态绑定，这是我的第一个上传至github的作品，希望大家多多指点，与我一同讨论
+This project was developed with the help of AI. Its primary purpose is to demonstrate configurable interfaces and dynamic binding between interfaces and their implementations.
+
+This is my first project on GitHub, and I would greatly appreciate any feedback or suggestions. Feel free to share your ideas or discuss improvements with me.
