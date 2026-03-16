@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>格式化结果</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Microsoft YaHei", Arial, sans-serif;
+            background: #f5f7fb;
+            color: #333;
+        }
+
+        .container {
+            width: 520px;
+            margin: 80px auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            padding: 32px;
+        }
+
+        h1 {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .result-box {
+            border-radius: 10px;
+            padding: 18px 20px;
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+
+        .success {
+            background: #f0fff4;
+            border: 1px solid #b7eb8f;
+        }
+
+        .error {
+            background: #fff2f0;
+            border: 1px solid #ffb3b3;
+        }
+
+        .main-message {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .back-link {
+            display: inline-block;
+            text-decoration: none;
+            background: #1677ff;
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 8px;
+        }
+
+        .back-link:hover {
+            background: #0f5fd1;
+        }
+
+        .meta {
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>格式化结果</h1>
+
+    <div th:class="${result.success} ? 'result-box success' : 'result-box error'">
+        <div class="main-message" th:text="${result.message}">结果消息</div>
+
+        <div class="meta">
+            <div>
+                逻辑驱动器：
+                <span th:text="${result.driverLetter}">A:</span>
+            </div>
+
+            <div th:if="${result.success}">
+                分区：
+                <span th:text="${result.partition}">A</span>
+            </div>
+
+            <div th:if="${result.success}">
+                实现类：
+                <span th:text="${result.formatterClassName}">cn.xxx.SsdHardwareFormatter</span>
+            </div>
+        </div>
+    </div>
+
+    <a class="back-link" href="/disk/index.html">返回首页</a>
+</div>
+</body>
+</html>
